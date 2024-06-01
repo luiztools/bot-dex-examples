@@ -26,7 +26,7 @@ const token1 = new ethers.Contract(TOKEN1, ABI_ERC20, signer);
 async function getPrice() {
     const { result } = await Moralis.EvmApi.token.getTokenPrice({
         address: TOKEN0,
-        chain: EvmChain.GOERLI,
+        chain: EvmChain.SEPOLIA,
         exchange: "uniswapv3"
     })
     return result.usdPrice;
@@ -53,7 +53,7 @@ async function swap(tokenIn, tokenOut, amountIn) {
     const tx = await router.exactInputSingle(params, {
         from: WALLET,
         gasPrice: ethers.parseUnits('10', 'gwei'),
-        gasLimit: 250000
+        gasLimit: 300000
     });
     console.log("Swapping at " + tx.hash);
     const receipt = await tx.wait();
