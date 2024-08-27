@@ -1,7 +1,7 @@
 {
-  "name": "uniswap-monitor",
+  "name": "sushiswap-monitor",
   "version": "1.0.0",
-  "description": "A simple monitor bot for Uniswap V3.",
+  "description": "A simple monitor bot for SushiSwap V3.",
   "main": "index.js",
   "scripts": {
     "start": "node index"
@@ -10,8 +10,6 @@
   "author": "LuizTools",
   "license": "MIT",
   "dependencies": {
-    "@uniswap/sdk-core": "^4.0.6",
-    "@uniswap/v3-sdk": "^3.10.0",
     "dotenv": "^16.3.1",
     "ethers": "^6.7.1"
   }
