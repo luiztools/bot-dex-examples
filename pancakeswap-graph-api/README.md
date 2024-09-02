@@ -6,7 +6,9 @@ Application example that queries over PancakeSwap V3 Graph API.
 1. git clone
 2. cd pancakeswap-graph-api
 3. npm install
-4. npm run dev
+4. create your API Key at https://thegraph.com/studio/apikeys/
+5. change the /src/app/page.tsx code to include your Api Key
+6. npm run dev
 
 ## More
 

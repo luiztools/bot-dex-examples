@@ -9,7 +9,7 @@ export default function Home() {
   const [data, setData] = useState<string>("");
 
   async function btnEnviarClick() {
-    const { data } = await axios.post("https://api.thegraph.com/subgraphs/name/pancakeswap/exchange-v3-bsc", { query });
+    const { data } = await axios.post("https://gateway.thegraph.com/api/{api-key}/subgraphs/id/Hv1GncLY5docZoGtXjo4kwbTvxm3MAhVZqBZE4sUT9eZ", { query });
     setData(data.data);
   }
 
