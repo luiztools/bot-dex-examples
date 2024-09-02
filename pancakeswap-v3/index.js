@@ -1,4 +1,5 @@
 require("dotenv").config();
+const axios = require("axios");
 const { ethers } = require("ethers");
 
 const ROUTER_ADDRESS = process.env.ROUTER_ADDRESS;
