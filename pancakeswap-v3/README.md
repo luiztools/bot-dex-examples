@@ -22,10 +22,12 @@ A simple swap bot for PancakeSwap V3. No guarantees.
 
 ## Mais
 
-Tutorial no blog: https://www.luiztools.com.br/post/como-criar-robo-bot-trader-para-pancakeswap-v3-em-node-js/
+Tutorial no blog (pt-BR): https://www.luiztools.com.br/post/como-criar-robo-bot-trader-para-pancakeswap-v3-em-node-js/
 
 Me siga nas redes sociais para novidades: https://about.me/luiztools
 
 Receba novidades no Telegram: https://t.me/luiznews
 
 Conheça meu curso de web3/blockchain: https://www.luiztools.com.br/curso-web23
+
+Conheça meu livro: https://www.luiztools.com.br/livro-web3

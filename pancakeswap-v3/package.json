@@ -1,7 +1,7 @@
 {
-  "name": "uniswap",
+  "name": "pancakeswap-v3",
   "version": "1.0.0",
-  "description": "A simple swap bot for Uniswap V3.",
+  "description": "A simple swap bot for PancakeSwap V3.",
   "main": "index.js",
   "scripts": {
     "start": "node index"

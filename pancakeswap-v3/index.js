@@ -35,7 +35,7 @@ async function swap(tokenIn, tokenOut, amountIn) {
         tokenOut,
         fee: 2500,//poolFee = 0.25% * 10000
         recipient: WALLET,
-        deadline: Math.ceil((Date.now()/1000)) + 10,
+        deadline: Math.ceil((Date.now() / 1000)) + 10,
         amountIn,
         amountOutMinimum: 0,
         sqrtPriceLimitX96: 0
@@ -55,19 +55,32 @@ async function swap(tokenIn, tokenOut, amountIn) {
     return amountOut;
 }
 
-async function getPrice(contract) {
+async function getPrice(tokenAtMainnet) {
     const USDT_MAINNET = "0x55d398326f99059fF775485246999027B3197955";
+    const CHAIN_ID = process.env.CHAIN_ID;
+
+    const qs = {
+        chainId: CHAIN_ID,
+        sellToken: tokenAtMainnet,
+        buyToken: USDT_MAINNET,
+        sellAmount: ethers.parseEther("1")
+    }
+
     const { data } = await axios.get(
-        `https://bsc.api.0x.org/swap/v1/price?sellToken=${contract}&buyToken=${USDT_MAINNET}&sellAmount=1000000000000000000`,
+        `https://api.0x.org/swap/permit2/price?${new URLSearchParams(qs).toString()}`,
         {
-            headers: { "0x-api-key": process.env.API_KEY }
-        });
-    return parseFloat(data.price);
+            headers: {
+                "0x-api-key": process.env.API_KEY,
+                "0x-version": "v2"
+            },
+        }
+    );
+    return ethers.formatEther(data.buyAmount);
 }
 
 async function executeCycle() {
-    const CAKE_MAINNET = "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82";
-    const usdPrice = await getPrice(CAKE_MAINNET);
+    const TOKEN0_MAINNET = "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82";//CAKE mainnet, somente para os testes
+    const usdPrice = await getPrice(TOKEN0_MAINNET);
     console.log("USD " + usdPrice);
 
     if (!isApproved) {

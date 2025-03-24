@@ -1,5 +1,5 @@
 # bot-dex-examples
-Simple bots for decentralized exchanges (dex) as PancakeSwap and Uniswap.
+Simple bots for decentralized exchanges (dex) as PancakeSwap, Uniswap and SushiSwap.
 
 ## AVISOS
 
@@ -20,7 +20,7 @@ Consulte o Readme de cada projeto.
 
 ## More
 
-Conheça meu curso de bot para criptomoedas: https://www.luiztools.com.br/curso-beholder
+Conheça meus cursos: https://www.luiztools.com.br/meus-cursos
 
 Conheça meus livros: https://www.luiztools.com.br/meus-livros
 
